@@ -1,0 +1,86 @@
+package com.retail.ecommerce.Model;
+
+import com.retail.ecommerce.Enum.AvailabilityStatus;
+import com.retail.ecommerce.Enum.Category;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Product {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int productId;
+	private String productName;
+	private String productDescription;
+	private double productPrice;
+	private int productQuantity;
+	private AvailabilityStatus availabilityStatus;
+	private Category category;
+	
+	
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getProductDescription() {
+		return productDescription;
+	}
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+	public double getProductPrice() {
+		return productPrice;
+	}
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
+	}
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+	public void setProductQuantity(int productQuantity) {
+		this.productQuantity = productQuantity;
+	}
+	public AvailabilityStatus getAvailabilityStatus() {
+		return availabilityStatus;
+	}
+	public void setAvailabilityStatus(AvailabilityStatus availabilityStatus) {
+		this.availabilityStatus = availabilityStatus;
+	}
+	
+	public Product(int productId, String productName, String productDescription, double productPrice,
+			int productQuantity, AvailabilityStatus availabilityStatus) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.productDescription = productDescription;
+		this.productPrice = productPrice;
+		this.productQuantity = productQuantity;
+		this.availabilityStatus = availabilityStatus;
+	}
+	public Product() {
+		super();
+		
+	}
+	
+	
+	
+
+}
